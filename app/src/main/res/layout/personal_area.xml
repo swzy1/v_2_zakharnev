@@ -4,66 +4,111 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    android:padding="16dp">
 
-    <ImageButton
-        android:id="@+id/back_button"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:src="@android:drawable/ic_menu_revert"
-        android:background="?android:selectableItemBackgroundBorderless"
-        android:layout_gravity="start"
-        android:contentDescription="Назад" />
+    <!-- Верхняя панель с кнопкой "Назад", заголовком и кнопкой "Лупа" -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="8dp">
 
+        <!-- Кнопка "Назад" -->
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@android:drawable/ic_menu_revert"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:contentDescription="Назад" />
+
+        <!-- Текстовый заголовок "Кинозал" -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Кинозал"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+        <!-- Кнопка "Лупа" -->
+        <ImageButton
+            android:id="@+id/search_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@android:drawable/ic_menu_search"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:contentDescription="Поиск" />
+    </LinearLayout>
+
+    <!-- Приветствие -->
     <TextView
         android:id="@+id/welcome_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#000000"
         android:text="Привет, User!"
         android:textSize="18sp"
+        android:textStyle="bold"
         android:layout_marginBottom="16dp" />
 
+    <!-- Картинка фильма -->
     <ImageView
         android:id="@+id/movie_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:src="@drawable/ic_movie"
+        android:src="@drawable/rocket"
         android:scaleType="centerCrop" />
 
+    <!-- Кнопка "Купить билет" -->
     <Button
         android:id="@+id/buy_ticket_button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:background="@drawable/button_style"
         android:textColor="#FFFFFF"
         android:text="Купить билет"
         android:layout_marginTop="16dp" />
 
+    <!-- Текст "Продолжить просмотр" -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Продолжить просмотр"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
         android:layout_marginTop="16dp"
-        android:textSize="16sp" />
+        android:gravity="left"
+        android:text="Продолжить просмотр"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
+    <!-- Горизонтальный список фильмов -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="100dp"
             android:layout_height="150dp"
-            android:src="@drawable/ic_thumbnail"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/pic1" />
 
         <ImageView
             android:layout_width="100dp"
             android:layout_height="150dp"
-            android:src="@drawable/ic_thumbnail"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/pic2" />
 
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/pic3" />
     </LinearLayout>
 </LinearLayout>

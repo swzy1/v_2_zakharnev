@@ -4,49 +4,125 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    android:padding="16dp">
 
-    <ImageButton
-        android:id="@+id/back_button"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:src="@android:drawable/ic_menu_revert"
-        android:background="?android:selectableItemBackgroundBorderless"
-        android:layout_gravity="start"
-        android:contentDescription="Назад" />
-
-    <EditText
-        android:id="@+id/search_input"
+    <!-- Верхняя панель с кнопкой "Назад" и заголовком -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Новые сериалы"
-        android:layout_marginBottom="16dp" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
-    <Button
-        android:id="@+id/search_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_style"
-        android:text="Искать"
-        android:textColor="#FFFFFF" />
+        <!-- Кнопка "Назад" -->
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@android:drawable/ic_menu_revert"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:contentDescription="Назад" />
 
-    <TextView
-        android:id="@+id/last_search_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Последний запрос: Рики и Морти"
-        android:layout_marginTop="16dp" />
+        <!-- Заголовок "Поиск" -->
+        <TextView
+            android:layout_width="255dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Поиск"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
-    <CheckBox
-        android:id="@+id/hide_adult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Скрывать фильмы 18+" />
+    <!-- Поле поиска -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/img"
+        android:orientation="horizontal"
+        android:padding="8dp">
 
-    <CheckBox
-        android:id="@+id/show_available"
-        android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/search_input"
+            android:layout_width="0dp"
+            android:layout_height="66dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="Новые сериалы"
+            android:padding="8dp"
+            android:textColor="#999999"
+            android:textSize="16sp" />
+
+        <ImageButton
+            android:id="@+id/search_button"
+            android:layout_width="52dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:contentDescription="Поиск"
+            android:src="@android:drawable/ic_menu_search"
+            />
+    </LinearLayout>
+
+    <!-- Последний запрос -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Отображать доступные фильмы" />
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Последний запрос"
+            android:textColor="#999999"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Рики и Морти"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+    <!-- Фильтры (перемещены вниз экрана) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/hide_adult"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:buttonTint="#1E88E5"
+            android:checked="true"
+            android:text="Скрывать фильмы 18+"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/show_available"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:buttonTint="#1E88E5"
+            android:checked="true"
+            android:text="Отображать доступные фильмы"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/show_premieres"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:buttonTint="#1E88E5"
+            android:text="Отображать премьеры"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+    </LinearLayout>
 </LinearLayout>
