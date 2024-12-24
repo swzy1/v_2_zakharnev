@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@android:drawable/ic_menu_revert"
+        android:background="?android:selectableItemBackgroundBorderless"
+        android:layout_gravity="start"
+        android:contentDescription="Назад"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/login_image"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:src="@drawable/film" />
+
+    <EditText
+        android:id="@+id/login_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Логин"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/password_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Пароль"
+        android:inputType="textPassword"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_style"
+        android:text="Войти в кинозал"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>
